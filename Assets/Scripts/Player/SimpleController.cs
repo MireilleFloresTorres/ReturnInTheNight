@@ -17,7 +17,7 @@ public class SimpleFPSController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
 
-        Camera.main.transform.localPosition = new Vector3(0f, 1.75f, 0f);
+        Camera.main.transform.localPosition = new Vector3(0f, 1.65f, 0f);
     }
 
     void Update()
