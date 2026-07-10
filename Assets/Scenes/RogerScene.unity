@@ -215,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &38494225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -969,7 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76725ada5a2d4d84fbe67d7038a37a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
-  pantallaInicio: {fileID: 38494224}
+  pantallaInicio: {fileID: 523668591}
   menuPrincipal: {fileID: 523668591}
   panelOpciones: {fileID: 495043579}
   panelCreditos: {fileID: 1988880929}

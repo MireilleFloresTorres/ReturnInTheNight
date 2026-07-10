@@ -6,29 +6,33 @@ public class PuzzleMiniatura : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 {
     public GameObject prefabPiezaGrande;
     public RectTransform areaTablero;
+    public Vector2 tamañoGrande = new Vector2(480f, 480f);
 
     private bool yaUsada = false;
-    private GameObject piezaTemporal; // Pieza que se arrastra visualmente
+    private GameObject piezaTemporal;
+    private Canvas canvasRaiz;
+
+    void Start()
+    {
+        canvasRaiz = GetComponentInParent<Canvas>().rootCanvas;
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (yaUsada) return;
 
-        // Crea la pieza grande y la pone encima de todo en el Canvas
-        Canvas canvas = GetComponentInParent<Canvas>();
-        piezaTemporal = Instantiate(prefabPiezaGrande, canvas.transform);
-        piezaTemporal.GetComponent<RectTransform>().position =
-            eventData.position;
+        piezaTemporal = Instantiate(prefabPiezaGrande, canvasRaiz.transform);
+        RectTransform rt = piezaTemporal.GetComponent<RectTransform>();
+        rt.position = eventData.position;
+        rt.sizeDelta = new Vector2(80f, 80f); // Tamaño mientras arrastras
+        piezaTemporal.transform.localScale = Vector3.one;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         if (piezaTemporal == null) return;
-
-        // La pieza sigue al mouse
         piezaTemporal.GetComponent<RectTransform>().position = eventData.position;
     }
-
 
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -37,16 +41,17 @@ public class PuzzleMiniatura : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         if (RectTransformUtility.RectangleContainsScreenPoint(
             areaTablero, eventData.position, eventData.pressEventCamera))
         {
-            piezaTemporal.transform.SetParent(areaTablero);
-
-            // Reset de escala + tamaño
-            piezaTemporal.transform.SetParent(areaTablero);
-
-            // En lugar de sizeDelta, escala directamente
-            piezaTemporal.transform.localScale = new Vector3(3f, 3f, 1f);
+            // Mueve al tablero y escala grande
+            piezaTemporal.transform.SetParent(areaTablero, false);
+            RectTransform rt = piezaTemporal.GetComponent<RectTransform>();
+            rt.anchoredPosition = Vector2.zero;
+            rt.sizeDelta = tamañoGrande;
+            piezaTemporal.transform.localScale = Vector3.one;
 
             yaUsada = true;
             GetComponent<Image>().color = new Color(0.3f, 0.3f, 0.3f, 1f);
+
+            PuzzleManager.Instance.PiezaColocadaEnTablero();
         }
         else
         {

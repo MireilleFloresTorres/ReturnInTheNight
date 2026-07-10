@@ -14,8 +14,14 @@ public class PuzzleManager : MonoBehaviour
     [Header("HUD")]
     public TextMeshProUGUI contadorTexto;
 
+    [Header("Panel Completado")]
+    public GameObject panelCompletado;
+
     private int piezasEncontradas = 0;
     private bool puzzleAbierto = false;
+
+    private int piezasColocadas = 0;
+    private const int TOTAL_PIEZAS = 4;
 
     public static PuzzleManager Instance;
 
@@ -80,5 +86,20 @@ public class PuzzleManager : MonoBehaviour
         Debug.Log("Actualizando contador, texto: " + (contadorTexto != null ? "asignado" : "NULL"));
         if (contadorTexto != null)
             contadorTexto.text = piezasEncontradas + "/4";
+    }
+
+    public void PiezaColocadaEnTablero()
+    {
+        piezasColocadas++;
+
+        if (piezasColocadas >= TOTAL_PIEZAS)
+        {
+            Invoke("MostrarCompletado", 1f); // Espera 1 segundo antes de mostrar
+        }
+    }
+
+    void MostrarCompletado()
+    {
+        panelCompletado.SetActive(true);
     }
 }
