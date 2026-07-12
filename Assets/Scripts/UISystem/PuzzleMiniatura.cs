@@ -51,7 +51,6 @@ public class PuzzleMiniatura : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             yaUsada = true;
             GetComponent<Image>().color = new Color(0.3f, 0.3f, 0.3f, 1f);
 
-            PuzzleManager.Instance.PiezaColocadaEnTablero();
         }
         else
         {

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -17,6 +18,9 @@ public class PuzzleManager : MonoBehaviour
     [Header("Panel Completado")]
     public GameObject panelCompletado;
 
+    [Header("Tablero")]
+    public RectTransform areaTablero;
+
     private int piezasEncontradas = 0;
     private bool puzzleAbierto = false;
 
@@ -24,7 +28,7 @@ public class PuzzleManager : MonoBehaviour
     private const int TOTAL_PIEZAS = 4;
 
     public static PuzzleManager Instance;
-
+  
     void Awake() => Instance = this;
 
     void Start()
@@ -94,12 +98,34 @@ public class PuzzleManager : MonoBehaviour
 
         if (piezasColocadas >= TOTAL_PIEZAS)
         {
-            Invoke("MostrarCompletado", 1f); // Espera 1 segundo antes de mostrar
+            StartCoroutine(MostrarCompletadoConDelay());
         }
+    }
+
+    IEnumerator MostrarCompletadoConDelay()
+    {
+        yield return new WaitForSecondsRealtime(1f); // Usa tiempo real, ignora timeScale
+        panelCompletado.SetActive(true);
     }
 
     void MostrarCompletado()
     {
         panelCompletado.SetActive(true);
+    }
+
+    public void ConfirmarPuzzle()
+    {
+        // Busca todas las piezas arrastables que están en el tablero
+        PiezaArrastrable[] piezasEnTablero = areaTablero.GetComponentsInChildren<PiezaArrastrable>();
+
+        if (piezasEnTablero.Length >= TOTAL_PIEZAS)
+        {
+            StartCoroutine(MostrarCompletadoConDelay());
+        }
+        else
+        {
+            Debug.Log("Faltan piezas: " + piezasEnTablero.Length + "/" + TOTAL_PIEZAS);
+            // Aquí puedes mostrar un mensaje al jugador si quieres
+        }
     }
 }

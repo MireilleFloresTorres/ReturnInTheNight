@@ -4,9 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseController : MonoBehaviour
 {
-    [Header("Panel de Pausa")]
-    public GameObject panelPausa; // Asigna un panel en la escena del juego
-
+    public GameObject panelPausa;
     private bool pausado = false;
 
     void Update()
@@ -22,22 +20,24 @@ public class PauseController : MonoBehaviour
     {
         pausado = true;
         panelPausa.SetActive(true);
-        Time.timeScale = 0f;          // Congela el juego
-        Cursor.lockState = CursorLockMode.None; // Libera el mouse
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Reanudar()
     {
         pausado = false;
         panelPausa.SetActive(false);
-        Time.timeScale = 1f;          // Reanuda el juego
-        Cursor.lockState = CursorLockMode.Locked; // Vuelve a bloquear el mouse
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void IrAlMenu()
     {
-        Time.timeScale = 1f;          // IMPORTANTE: siempre resetear antes de cambiar escena
-        SceneManager.LoadScene("UIScene"); // Cambia por el nombre de la escena de tu compañero
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("RogerScene"); // <- escena de tu compañero
     }
 
     public void Reiniciar()
