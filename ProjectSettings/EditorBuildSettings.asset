@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/PressEnterStart.unity
+    guid: 870d9812c7d4db84ebb5c42f3ef0095c
+  - enabled: 1
     path: Assets/Scenes/RogerScene.unity
     guid: dc8f9751434ab684087e0c82afc54d28
   - enabled: 1
