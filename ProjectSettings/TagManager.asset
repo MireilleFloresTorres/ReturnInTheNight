@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Foto
+  - Anomalia
+  - Cama
   layers:
   - Default
   - TransparentFX
