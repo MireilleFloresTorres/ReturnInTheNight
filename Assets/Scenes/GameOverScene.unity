@@ -526,6 +526,7 @@ GameObject:
   - component: {fileID: 784822147}
   - component: {fileID: 784822146}
   - component: {fileID: 784822145}
+  - component: {fileID: 784822148}
   m_Layer: 5
   m_Name: Btn_MainMenu
   m_TagString: Untagged
@@ -647,6 +648,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784822143}
   m_CullTransparentMesh: 1
+--- !u!114 &784822148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784822143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4fff2270979bc42ae16d1b7df89b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHover
+  escalaHover: 1.1
 --- !u!1 &896844007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,6 +1072,7 @@ GameObject:
   - component: {fileID: 1877305523}
   - component: {fileID: 1877305522}
   - component: {fileID: 1877305521}
+  - component: {fileID: 1877305524}
   m_Layer: 5
   m_Name: Btn_Retry
   m_TagString: Untagged
@@ -1179,6 +1194,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877305519}
   m_CullTransparentMesh: 1
+--- !u!114 &1877305524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877305519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4fff2270979bc42ae16d1b7df89b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHover
+  escalaHover: 1.1
 --- !u!1 &1989258558
 GameObject:
   m_ObjectHideFlags: 0
