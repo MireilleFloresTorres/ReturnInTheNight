@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public GameObject panelOpciones;
     public GameObject panelCreditos;
     public GameObject panelHowToPlay;
+    public CreditsScroll creditsScroll;
 
     void Start()
     {
@@ -53,12 +54,16 @@ public class UIManager : MonoBehaviour
         panelHowToPlay.SetActive(false);
     }
 
+  
+
     public void AbrirCreditos()
     {
         menuPrincipal.SetActive(false);
         panelOpciones.SetActive(false);
         panelCreditos.SetActive(true);
         panelHowToPlay.SetActive(false);
+
+        creditsScroll.ReiniciarCreditos();
     }
 
     public void AbrirComoJugar()
