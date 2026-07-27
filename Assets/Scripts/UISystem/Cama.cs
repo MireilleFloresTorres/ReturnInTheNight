@@ -17,11 +17,5 @@ public class Cama : MonoBehaviour
         canvasPista.SetActive(mostrar);
     }
 
-    void Update()
-    {
-        if (jugadorCerca && Keyboard.current.fKey.wasPressedThisFrame)
-        {
-            AnomalyManager.Instance.IntentarDormir();
-        }
-    }
+  
 }

@@ -27,11 +27,29 @@ public class AnomalyManager : MonoBehaviour
 
         if (anomaliasEncontradas >= minimoParaGanar)
         {
-            Debug.Log("¡Ganaste!");
+            Debug.Log("Antes de AvanzarDia: " + DayManager.Instance.GetDia());
+            DayManager.Instance.AvanzarDia();
+            Debug.Log("Después de AvanzarDia: " + DayManager.Instance.GetDia());
+            CargarSiguienteEscena();
         }
         else
         {
             SceneManager.LoadScene("GameOverScene");
+        }
+    }
+
+    void CargarSiguienteEscena()
+    {
+        int escenaActual = SceneManager.GetActiveScene().buildIndex;
+        int siguienteEscena = escenaActual + 1;
+
+        if (siguienteEscena >= SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene("VictoriaScene"); 
+        }
+        else
+        {
+            SceneManager.LoadScene(siguienteEscena);
         }
     }
 }

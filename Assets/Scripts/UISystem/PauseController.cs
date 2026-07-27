@@ -16,8 +16,14 @@ public class PauseController : MonoBehaviour
         }
     }
 
+   
+    public TaskPanel taskPanel;
+
     void Pausar()
     {
+        
+        if (taskPanel != null) taskPanel.Cerrar();
+
         pausado = true;
         panelPausa.SetActive(true);
         Time.timeScale = 0f;
