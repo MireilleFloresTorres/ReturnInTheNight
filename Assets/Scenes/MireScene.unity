@@ -1329,10 +1329,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "-Levantarse para apagar la alarma\r\n-Revisar el armario\r\n-Ba\xF1arse\r\n-Desayunar
-    (Ir a la cocina)\r\n-Dejar el traste sucio en el lavabo\r\n-Encender la tele
-    (Tele encendida canal 5)\r\n-Ir a su escritorio a trabajar\r\n-Poner musica (Se
-    reproduce m\xFAsica movida) \r\n-Revisar correo (vac\xEDo al inicio)\r\n-Irse
-    a dormir\r\n"
+    \r\n-Dejar el traste sucio en el lavabo\r\n-Encender la tele \r\n-Ir a su escritorio
+    a trabajar\r\n-Poner musica \r\n-Revisar correo\r\n-Irse a dormir\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3622828cf135dbd4c9cdf11b54f4d4d4, type: 2}
   m_sharedMaterial: {fileID: 6533059423936899264, guid: 3622828cf135dbd4c9cdf11b54f4d4d4, type: 2}
