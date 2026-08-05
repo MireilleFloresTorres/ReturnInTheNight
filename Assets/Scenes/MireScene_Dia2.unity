@@ -6287,7 +6287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnomalyManager
   totalAnomalias: 10
-  minimoParaGanar: 5
+  minimoParaGanar: 6
 --- !u!1 &469624591
 GameObject:
   m_ObjectHideFlags: 0

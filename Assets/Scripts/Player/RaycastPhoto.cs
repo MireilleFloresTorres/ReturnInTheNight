@@ -62,10 +62,20 @@ public class RecogerFoto : MonoBehaviour
                 puzzleManager.PiezaEncontrada();
             }
 
-            // Anomalía
+            // Anomalía sin diálogo
             if (hit.collider.CompareTag("Anomalia"))
             {
-                hit.collider.GetComponent<Anomalia>().Encontrar();
+                Anomalia anomalia = hit.collider.GetComponent<Anomalia>();
+                if (anomalia != null)
+                    anomalia.Encontrar();
+            }
+
+            // Anomalía con diálogo
+            if (hit.collider.CompareTag("AnomaliaDialogo"))
+            {
+                AnomaliaDialogo anomalia = hit.collider.GetComponent<AnomaliaDialogo>();
+                if (anomalia != null)
+                    anomalia.Activar();
             }
         }
     }

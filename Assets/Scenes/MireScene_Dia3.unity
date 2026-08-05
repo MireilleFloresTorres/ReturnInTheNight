@@ -6286,8 +6286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0764e4685ac85704a817b2f2b2ea88f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnomalyManager
-  totalAnomalias: 10
-  minimoParaGanar: 5
+  totalAnomalias: 9
+  minimoParaGanar: 9
 --- !u!1 &469624591
 GameObject:
   m_ObjectHideFlags: 0
