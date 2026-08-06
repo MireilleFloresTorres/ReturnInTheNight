@@ -10,6 +10,6 @@ public class Anomalia : MonoBehaviour
         yaEncontrada = true;
         AnomalyManager.Instance.RegistrarAnomalia();
         
-        GetComponent<Renderer>().material.color = Color.green;
+        
     }
 }
