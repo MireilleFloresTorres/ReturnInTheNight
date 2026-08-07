@@ -7,10 +7,12 @@ public class PuzzleMiniatura : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public GameObject prefabPiezaGrande;
     public RectTransform areaTablero;
     public Vector2 tamañoGrande = new Vector2(480f, 480f);
+  
 
     private bool yaUsada = false;
     private GameObject piezaTemporal;
     private Canvas canvasRaiz;
+
 
     void Start()
     {
