@@ -15400,7 +15400,8 @@ PrefabInstance:
       propertyPath: areaTablero
       value: 
       objectReference: {fileID: 1574742967}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5151740722539121141, guid: 4da8a380b99e8d249b3d6b5f889307e3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

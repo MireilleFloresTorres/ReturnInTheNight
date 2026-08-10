@@ -15096,7 +15096,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Photo0_2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 416301422660325760, guid: c97196d41cedafa4ca8353df34c5fc28, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -29338,7 +29339,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Photo0_3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2095971127732555741, guid: 31602dbb13dff0f498d6694755870d2f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
