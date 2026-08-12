@@ -40,6 +40,8 @@ public class PuzzleManager : MonoBehaviour
             m.SetActive(false);
 
         ActualizarContador();
+        SincronizarMiniaturas();
+
     }
 
     void Update()
@@ -78,18 +80,15 @@ public class PuzzleManager : MonoBehaviour
     // Este lo llama RecogerFoto.cs al recolectar
     public void PiezaEncontrada()
     {
-        if (piezasEncontradas >= miniaturas.Length) return;
-
-        miniaturas[piezasEncontradas].SetActive(true);
-        piezasEncontradas++;
+        DayManager.Instance.RegistrarFoto();
         ActualizarContador();
+        ActualizarMiniaturas();
     }
 
     void ActualizarContador()
     {
-        Debug.Log("Actualizando contador, texto: " + (contadorTexto != null ? "asignado" : "NULL"));
         if (contadorTexto != null)
-            contadorTexto.text = piezasEncontradas + "/4";
+            contadorTexto.text = DayManager.Instance.GetFotos() + " de " + DayManager.Instance.GetTotalFotos();
     }
 
     public void PiezaColocadaEnTablero()
@@ -100,6 +99,20 @@ public class PuzzleManager : MonoBehaviour
         {
             StartCoroutine(MostrarCompletadoConDelay());
         }
+    }
+
+    void ActualizarMiniaturas()
+    {
+        int fotosActuales = DayManager.Instance.GetFotos();
+        if (fotosActuales > 0 && fotosActuales <= miniaturas.Length)
+            miniaturas[fotosActuales - 1].SetActive(true);
+    }
+
+    void SincronizarMiniaturas()
+    {
+        int fotosGuardadas = DayManager.Instance.GetFotos();
+        for (int i = 0; i < miniaturas.Length; i++)
+            miniaturas[i].SetActive(i < fotosGuardadas);
     }
 
     IEnumerator MostrarCompletadoConDelay()

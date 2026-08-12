@@ -74,10 +74,7 @@ public class UIManager : MonoBehaviour
         panelHowToPlay.SetActive(true);
     }
 
-    public void Jugar()
-    {
-        SceneManager.LoadScene("MireScene"); 
-    }
+    
 
     public void Salir()
     {
@@ -87,5 +84,13 @@ public class UIManager : MonoBehaviour
                 Application.Quit();
         #endif
         Debug.Log("Saliendo del juego...");
+    }
+
+    public void Jugar()
+    {
+        if (DayManager.Instance != null)
+            DayManager.Instance.Resetear();
+
+        SceneManager.LoadScene("MireScene");
     }
 }

@@ -6,6 +6,19 @@ public class DayManager : MonoBehaviour
     private int diaActual = 0;
     private const int totalDias = 3;
 
+    
+    private int fotosEncontradas = 0;
+    private const int totalFotos = 4;
+
+    public int GetFotos() => fotosEncontradas;
+    public int GetTotalFotos() => totalFotos;
+
+    public void RegistrarFoto()
+    {
+        if (fotosEncontradas < totalFotos)
+            fotosEncontradas++;
+    }
+
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     static void Init()
     {
@@ -30,6 +43,11 @@ public class DayManager : MonoBehaviour
         }
     }
 
+    public void Resetear()
+    {
+        diaActual = 0;
+        fotosEncontradas = 0;
+    }
     public int GetDia() => diaActual;
     public int GetTotalDias() => totalDias;
     public void AvanzarDia() => diaActual++;
