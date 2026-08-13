@@ -5,7 +5,8 @@ public class GameOverManager : MonoBehaviour
 {
     public void Reiniciar()
     {
-        SceneManager.LoadScene("MireScene");
+        string nivel = PlayerPrefs.GetString("UltimoNivel", "MireScene");
+        SceneManager.LoadScene(nivel);
     }
 
     public void IrAlMenu()

@@ -34,6 +34,9 @@ public class AnomalyManager : MonoBehaviour
         }
         else
         {
+            PlayerPrefs.SetString("UltimoNivel", SceneManager.GetActiveScene().name);
+            PlayerPrefs.Save();
+
             SceneManager.LoadScene("GameOverScene");
         }
     }
